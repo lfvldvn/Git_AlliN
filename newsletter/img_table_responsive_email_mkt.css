@@ -1,0 +1,51 @@
+<style type="text/css">
+        @media screen and (max-width: 600px) {
+            .responsive-table {
+                width: 100% !important;
+            }
+
+            .destaques-mobile {
+                width: 100% !important;
+                max-width: 600px !important;
+                display: inline-table !important;
+                padding: 10px;
+                float: center;
+                mso-hide: all !important;
+                background-color: #F1F1F1;
+            }
+
+            .destaques-desktop {
+                width: 100% !important;
+                display: none !important;
+                float: center;
+                mso-hide: all !important;
+            }
+
+            .responsive-image {
+                width: 100% !important;
+                height: auto !important;
+                float: center;
+            }
+
+            .responsive-image-sm {
+                width: 400px !important;
+                height: auto !important;
+                float: center;
+                align-content: center;
+                align-items: center;
+            }
+
+            .mobilecontent {
+                width: 100% !important;
+                max-width: 600px !important;
+                display: inline-table !important;
+                padding: 10px;
+                float: center;
+                mso-hide: all !important;
+                display: none !important;
+                max-height: 0px !important;
+                overflow: hidden !important;
+                background-color: #F1F1F1;
+            }
+        }
+    </style>
