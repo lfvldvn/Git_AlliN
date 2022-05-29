@@ -1,0 +1,396 @@
+{% set totalProducts=products|length %}{% set totalRecommendations=recommendations|length %}{% if totalProducts > 0 %}
+<!-- OFERTA -->
+<table bgcolor="#ffffff" width="600">
+    <tr>
+        <td height="20"></td>
+    </tr>
+</table>
+<table width="600" bgcolor="" cellpadding="0" cellspacing="0" align="center">
+    {% set totalList=totalProducts / 2 %}
+    {% set c=0 %}
+    {% for i in 1..totalList %}
+    <tr>
+        <td align="center" width="600" bgcolor="#ffffff">
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                     <a href="{{ products[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                        <img border="0" src="{{ products[c]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                    </a>
+                </td>
+                <td width="289" bgcolor="" align="center" valign="top">
+                    <a href="{{ products[c+1]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                        <img border="0" src="{{ products[c+1]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td width="289" bgcolor="" align="center" valign="top">
+                    <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                        {{ products[c]['productName'] }}
+                    </p>
+                </td>
+                <td width="289" bgcolor="" align="center" valign="top">
+                    <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                        {{ products[(c+1)]['productName'] }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="289" bgcolor="" align="center">
+                    <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                        {{ products[c]['percentage'] }}% compraram
+                    </p>
+                </td>
+                <td width="289" bgcolor="" align="center">
+                   <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                    {{ products[(c+1)]['percentage'] }}% compraram
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="289" height="60" bgcolor="" align="center">
+                <table width="289" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                    <tr>
+                        <td align="center" width="289">
+                         <a href="{{ products[c]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                            <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                <tr>
+                                    <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                        <a href="{{ products[c]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td width="289" height="60" bgcolor="" align="center">
+            <table width="289" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td align="center" width="289">
+                        <a href="{{ products[c+1]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                            <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                <tr>
+                                    <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                        <a href="{{ products[c+1]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>                   
+    </tr>
+</table>
+</td>
+</tr>
+{% set c=c+2 %}
+{% endfor %}
+</table>
+<!-- FIM OFERTA -->
+{% endif %}{% if totalRecommendations > 0 %}
+<!-- RECOMENDATIONS -->
+<center>
+    <table cellpadding="0" cellspacing="0" align="center" bgcolor="#ffffff" style="width: 596px; max-width: 596px; min-width: 596px; background-color: #ffffff;">
+        <tr>
+            <td align="center" style="padding: 10px 0px;background-color: #ffffff;">
+                <span style="font-family: sans-serif;color: #009aa6; font-weight: bold; font-size: 20pt;">Outros produtos que podem lhe interessar</span>
+                <img src="" style="display: block;">
+            </td>
+        </tr>
+    </table>
+</center>
+<table width="600" bgcolor="" cellpadding="0" cellspacing="0" align="center">
+    {% if totalRecommendations in [3,6,9,12] %}{% set totalList=totalRecommendations / 3 %}
+    {% set c=0 %}
+    {% for i in 1..totalList %}
+    <tr>
+        <td align="center" bgcolor="#ffffff">
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[c]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[(c + 1)]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[(c + 2)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[(c + 2)]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="188" bgcolor="" align="center" valign="top">
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                            {{ recommendations[c]['productName'] }}
+                        </p>
+                    </td>
+                    <td width="188" bgcolor="" align="center" valign="top">
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                            {{ recommendations[(c + 1)]['productName'] }}
+                        </p>
+                    </td>
+                    <td width="188" bgcolor="" align="center" valign="top">
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                            {{ recommendations[(c + 2)]['productName'] }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="188" bgcolor="" align="center">
+                        {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; font-weight: bold;">
+                            DE <span style="text-decoration: line-through #000000; font-weight: lighter;color: #000000; font-size: 12px">{{ recommendations[c]['price'] }}</span>
+                        </p>
+                        {% endif %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                            POR {{ recommendations[c]['priceBy'] }}
+                        </p>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; font-weight: bold;">
+                            DE <span style="text-decoration: line-through #000000; font-weight: lighter;color: #000000; font-size: 12px">{{ recommendations[(c + 1)]['price'] }}</span>
+                        </p>
+                        {% endif %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                            POR {{ recommendations[(c + 1)]['priceBy'] }}
+                        </p>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        {% if recommendations[(c + 2)]['priceByNum'] < recommendations[(c + 2)]['priceNum'] %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; font-weight: bold;">
+                            DE <span style="text-decoration: line-through #000000; font-weight: lighter;color: #000000; font-size: 12px">{{ recommendations[(c + 2)]['price'] }}</span>
+                        </p>
+                        {% endif %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                            {{ recommendations[(c + 2)]['priceBy'] }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="188" height="60" bgcolor="" align="center">
+                        <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                            <tr>
+                                <td align="center">
+                                    <a href="{{ products[c]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                        <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                    <a href="{{ products[c]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="188" height="60" bgcolor="" align="center">
+                        <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                            <tr>
+                                <td align="center">
+                                    <a href="{{ products[c+1]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                        <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                    <a href="{{ products[c+1]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="188" height="60" bgcolor="" align="center">
+                        <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                            <tr>
+                                <td align="center">
+                                    <a href="{{ products[c+2]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                        <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                    <a href="{{ products[c+2]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% set c=c + 3 %}{% endfor %}{% elseif totalRecommendations in [2,4,8,10] %}{% set totalList=totalRecommendations / 2 %}{% set c=0 %}{% for i in 1..totalList %}
+    <tr>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td width="289" bgcolor="" align="center">
+                        <a href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[c]['image'] }}" width="289" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="289" bgcolor="" align="center">
+                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[(c + 1)]['image'] }}" width="289" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                            {{ recommendations[c]['productName'] }}
+                        </p>
+                    </td>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                            {{ recommendations[(c + 1)]['productName'] }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" bgcolor="" align="center">
+                        {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; font-weight: bold;">
+                            DE <span style="text-decoration: line-through #000000; font-weight: lighter;color: #000000; font-size: 12px">{{ recommendations[c]['price'] }}</span>
+                        </p>
+                        {% endif %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                            POR {{ recommendations[c]['priceBy'] }}                        
+                        </p>
+                        <hr color="#cccccc" size="1" width="220">
+                    </td>
+                    <td width="289" bgcolor="" align="center">
+                        <br>
+                        <hr color="#cccccc" size="1" width="220">
+                        {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; font-weight: bold;">
+                            DE <span style="text-decoration: line-through #000000; font-weight: lighter;color: #000000; font-size: 12px">{{ recommendations[(c + 1)]['price'] }}</span>
+                        </p>
+                        {% endif %}
+                        <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                            POR{{ recommendations[(c + 1)]['priceBy'] }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" height="60" bgcolor="" align="center">
+                        <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                            <tr>
+                                <td align="center">
+                                    <a href="{{ products[c]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                        <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                            <tr>
+                                                <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                    <a href="{{ products[c]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="289" height="60" bgcolor="" align="center">
+                        <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                            <tr>
+                                <td align="center">
+                                   <a href="{{ products[c+1]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                    <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                        <tr>
+                                            <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                <a href="{{ products[c+1]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{% set c=c + 2 %}{% endfor %}{% else %}{% if totalRecommendations > 0 %}{% for i in 0..(totalRecommendations - 1) %}
+<tr>
+    <td>
+        <table bgcolor="" cellpadding="0" cellspacing="2" width="100%" align="center">
+            <tr>
+                <td>
+                    <table bgcolor="" cellpadding="5" cellspacing="0" width="100%" align="center">
+                        <tr>
+                            <td>
+                                <a href="{{ recommendations[i]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                                    <img border="0" src="{{ recommendations[i]['image'] }}" width="200" alt="Imagem indispon&iacute;vel">
+                                </a>
+                            </td>
+                            <td>
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #000000; font-weight: bold;">
+                                                {{ recommendations[i]['productName'] }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="">
+                                            <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #009AA6; font-weight: bold;">
+                                                POR {{ recommendations[i]['priceBy'] }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                                                <tr>
+                                                    <td align="center">
+                                                        <a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                                            <table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="center">
+                                                                <tr>
+                                                                    <td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #F5911F; border-radius: 05px;">
+                                                                        <a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{% endfor %}{% endif %}{% endif %}
+</table>
+{% endif %}

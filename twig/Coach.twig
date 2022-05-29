@@ -1,0 +1,84 @@
+{% set totalProducts = products|length %}
+{% if totalProducts > 0 %}
+	<!-- TXT - esta abaixando -->
+	<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tr> 
+			<td align="center">
+				<p style="font-family:Time News Roman, serif;font-size: 36px; color: #000; text-align: center; font-weight: lighter;">
+					Está abaixando...
+				</p>
+			</td>
+		</tr>
+	</table>
+	<table width="600" cellspacing="0" cellpadding="0" border="0" align="center">	
+		<tr>
+			<td align="center">			
+				<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr>
+						<td align="center">
+							<a href="{{ products[0]['productLink'] }}" target="_blank">
+								<img src="{{ products[0]['image'] }}" width="459" height="443" alt="{{ products[0]['productName'] }}" title="{{ products[0]['productName'] }}" border="0" style="display: block;">
+							</a>
+						</td>
+					</tr>				
+				</table>
+			</td>
+		</tr>	
+	</table>
+
+	<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tr>
+			<td align="center">
+				<p style="font-family:Time News Roman, serif;font-size: 24px; color: #000; text-align: center; font-weight: lighter; padding: 10px 60px 0px 60px">
+					O produto que você amou (e muitos outros), agora com um novo preço.				
+				</p>
+			</td>
+		</tr>
+	</table>
+	<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 20px 0px">
+		<tr>
+			<td align="center" width="314" height="44">
+				<a href="{{ products[0]['productLink'] }}" target="_blank" style="font-family: sans-serif;font-size: 22px; color: #000; text-align: center; font-weight: normal; text-decoration: none; vertical-align: center;">
+					<table width="314" cellpadding="0" cellspacing="0" border="1" align="center">
+						<tr>
+							<td align="center" width="314" height="44">								
+								COMPRAR AGORA
+							</td>
+						</tr>
+					</table>
+				</a>
+			</td>
+		</tr>
+	</table>
+	<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tr>
+			<td align="center">
+				<p style="font-family:Time News Roman, serif;font-size: 32px; color: #000; text-align: center; font-weight:lighter; padding:0px 100px 0px 100px">
+					O produto que você amou <br>está com novo preço.
+				</p>
+			</td>
+		</tr>
+	</table>
+{% set totalProducts = (totalProducts-1) %}
+{% if totalProducts in [ 2, 4, 6, 8 ] %} 
+	{% set totalList = (totalProducts/2) %}
+	{% set c = 1 %}
+	{% for i in 1..(totalList) %}		
+			<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td align="center">				
+						<a href="{{ products[c]['productLink'] }}" target="_blank">
+							<img src="{{ products[c]['image'] }}" width="220" height="200" alt="{{ products[c]['productName'] }}" title="{{ products[c]['productName'] }}" border="0" style="display: block;padding: 0px 10px 0px 90px">
+						</a>
+					</td>
+					<td align="center">
+						<a href="{{ products[(c + 1)]['productLink'] }}" target="_blank">
+							<img src="{{ products[(c + 1)]['image'] }}" width="220" height="200" alt="{{ products[(c + 1)]['productName'] }}" title="{{ products[(c + 1)]['productName'] }}" border="0" style="display: block;padding: 0px 90px 0px 10px">
+						</a>
+					</td>
+				</tr>
+			</table>
+		{% set c = c + 2 %}
+	{% endfor %}
+{% endif %}
+{% endif %}

@@ -1,0 +1,222 @@
+{% set totalProducts=products|length %}
+{% set totalRecommendations=recommendations|length %}
+{% if totalProducts > 0 %}
+<!-- 1/LINHA -->
+<center>
+    <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style=" font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;">
+        <tr>
+            <td align="center">
+                <a href="" target="_blank">
+                    <img src="" style="display: block;">
+                </a>                
+            </td>
+        </tr>
+    </table>
+    <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">
+        {% for i in 0..(totalProducts-1) %}
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">                
+                    <tr>
+                        <td width="230" height="200V" align="center">
+                            <!-- IMG -->
+                            <table width="200" cellpadding="15" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td width="200V" align="center">
+                                        <a href="{{ products[i]['productLink'] }}">
+                                            <img src="{{ products[i]['image'] }}" width="100%" height="250" border="0" style="display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- END IMG -->    
+                        </td>
+                        <td width="350" align="center">
+                            <!-- NOME PRODUTO -->
+                            <table width="350" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="left" width="350" style="padding: 0px">
+                                        <p style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252; font-weight: normal;">{{ products[i]['productName'] }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- END NOME PRODUTO -->                       
+                            <table width="350" border="0" cellpadding="0" cellspacing="0" align="center">
+                                <tr>
+                                    <td align="center" width="350">
+                                        {% if products[i]['price'] > products[i]['priceBy'] %}
+                                        <!-- PRECO DE -->
+                                        <table width="120" cellpadding="0" cellspacing="0" border="0" align="left">
+                                            <tr>
+                                                <td height="25" valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252; padding-bottom: 10px;">
+                                                    ANTES € <span style="text-decoration: line-through #2d2d2d; font-weight: lighter;color: #525252; font-size: 12px">{{ products[i]['price'] }}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        {% endif %}
+                                        <!-- END PRECO DE -->
+                                        <!-- PRECO POR -->
+                                        <table width="180" cellpadding="0" cellspacing="0" border="0" align="left">
+                                            <tr>
+                                                <td valign="top" height="25" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252; padding-bottom: 10px; font-weight: normal;">
+                                                    AGORA € <span style="text-decoration: none; font-weight: bold;color: #525252; font-size: 12px">{{ products[i]['priceBy'] }} </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- END PRECO POR -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" width="350">
+                                        <!-- CTA -->
+                                        <table width="175" cellpadding="0" cellspacing="0" border="0" align="left" style="padding:0px">
+                                            <tr>
+                                                <td valign="top" align="center" width="70" height="45">
+                                                    <a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff; font-weight: bold;">
+                                                        <table style="width: 175px; max-width: 175px; min-width: 175px; padding: 0px: " cellpadding="0" cellspacing="0" align="left">
+                                                            <tr>
+                                                                <td align="center" style="width: 175px; height: 30px; border: 0px; padding: 5px; background-color: #000000; border-radius: 02px;">
+                                                                    <a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em">SHOP NOW
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--END  CTA -->    
+                                    </td>
+                                </tr>
+                            </table>            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+{% endif %}
+{% if totalRecommendations >= 3 %}
+<!-- RECOMENDATIONS -->
+<br>
+<table cellpadding="0" cellspacing="0" width="600" border="0" align="center" style="text-decoration: none; font-family: sans-serif;color: #000000; font-size: 12px;">   
+    <tr>
+        <td align="center">    
+            <table width="596" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <td align="center">
+                        <table cellspacing="0" cellpadding="0" border="0" width="600">
+                            <tr>
+                                <td align="center" height="40" bgcolor="#000000" style="font-family: sans-serif; color: #ffffff;">
+                                    RECOMENDADOS PARA SI
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<br>
+<!-- 3/linha -->
+{% set c=0 %}
+{% set totalLines = (totalRecommendations / 3) | round(0, 'floor') %}
+{% for l in range(1, totalLines) %}
+<center>
+    <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+            <!-- Product 1 -->
+            <td valign="top" align="center">
+                <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <!-- IMG_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td width="174" height="250" valign="top" align="center">
+                                        <a href="{{ recommendations[c]['productLink'] }}" target="_blank">
+                                            <img src="{{ recommendations[c]['image'] }}" width="100%" height="250" border="0" style="display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- NOME_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="center" valign="top" height="40" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252">
+                                        <strong>{{ recommendations[c]['productName'] }}</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="1" bgcolor="#ffffff" align="center" valign="top" style="background-color:#ffffff;">
+            </td>
+            <!-- Product 2 -->
+            <td valign="top" align="center">
+                <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <!-- IMG_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td width="174" height="250" valign="top" align="center">
+                                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank">
+                                            <img src="{{ recommendations[(c + 1)]['image'] }}" width="100%" height="250" border="0" style="display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- NOME_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="center" valign="top" height="40" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252">
+                                        <strong>{{ recommendations[(c + 1)]['productName'] }}</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="1" bgcolor="#ffffff" align="center" valign="top" style="background-color:#ffffff;">
+            </td>
+            <!-- Product 3 -->
+            <td valign="top" align="center">
+                <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <!-- IMG_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td width="174" height="250" valign="top" align="center">
+                                        <a href="{{ recommendations[(c + 2)]['productLink'] }}" target="_blank">
+                                            <img src="{{ recommendations[(c + 2)]['image'] }}" width="100%" height="250" border="0" style="display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- NOME_PRODUCT -->
+                            <table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="center" valign="top" height="40" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #525252">
+                                        <strong>{{ recommendations[(c + 2)]['productName'] }}</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+        </tr>
+    </table><hr width="590" color="#ffffff">
+</center>
+{% set c = c + 3 %}
+{% endfor %}
+<!-- END RECOMMENDATIONS -->
+{% endif %}

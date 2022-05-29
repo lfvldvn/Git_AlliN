@@ -1,0 +1,135 @@
+<!-- TWIG -->
+{% set totalrecommendations=recommendations|length %}
+{% if totalrecommendations > 0 %}
+<table class="max_width" width="600" align="center" border="0" cellspacing="0" cellpadding="0" background="#ebe9e7">
+<center>
+	<table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tr>
+		<td height="20"></td>
+	</tr>		
+{% for i in 0..(totalRecommendations-1) %}
+	<tr>
+		<td>
+
+			<table class="max_width" width="600" align="center" border="0" cellspacing="0" cellpadding="0">					
+
+				<tr align="center">
+					<td width="2%"></td>
+					<td width="38.5%" align="center">
+						<a href="{{ recommendations[i]['productLink'] }}&consultoria={{references.ESPACO}}" target="_blank">
+							<img src="{{ recommendations[i]['image'] }}" class="max_width" alt="{{ recommendations[i]['productName'] }}" width="192" height="192" border="0"/>
+						</a>
+					</td>
+					<td width="5%"></td>
+					<td width="52.5%" valign="center" align="center">
+						<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+							<!-- Nome Do Produto -->
+							<tr>
+								<td align="center">
+									<table class="max_width" width="100%" border="0" cellspacing="0" cellpadding="0">							
+
+										<tr>																									
+											<td width="80%" align="left" class="btlinha1">
+												<a href="{{ recommendations[i]['productLink'] }}&consultoria={{references.ESPACO}}" target="_blank" style="text-decoration: none; color: #777777">
+													<font face="Verdana, Geneva, sans-serif" class="txt_mobile" color="#777777" style="font-size: 17px">
+														<font class="txt_title_mobile" color="#777777" style="font-size: 17px;">
+															<b>{{ recommendations[i]['productName'] }}</b>
+														</font>
+													</font>
+												</a>
+											</td>
+											<td width="20%" align="center" class="lateral_btlinha1"></td>																
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+							<!-- Valor do Produto -->
+
+							<tr>
+								<td align="center">
+									<table class="max_width" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>												
+											<td width="85%" align="left" class="btlinha1">
+												<a href="{{ recommendations[i]['productLink'] }}&consultoria={{references.ESPACO}}" target="_blank" height="45" style="text-decoration: none; color: #777777">
+													<font face="Verdana, Geneva, sans-serif" class="txt_mobile" color="#777777">
+
+														{% if (recommendations[i]['price']  >  recommendations[i]['priceBy'])  %}
+														<br>
+														<font class="txt_subvalue_mobile" style="font-size: 15px; color: #777777; text-decoration: line-through;">
+															{{ recommendations[i]['price'] }}
+														</font>
+														{% endif %}
+														<br>	
+
+														<font class="txt_value_mobile" style="font-size: 20px; color: #777777;">
+															<b>{{ recommendations[i]['priceBy'] }}</b>
+														</font>
+													</font>
+												</a>
+											</td>
+											<td width="15%" align="center" class="lateral_btlinha1"></td>																
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="10" align="center"></td>
+							</tr>
+
+
+							<!-- BotÃĢo do Produto -->
+
+							<tr>
+								<td align="center">
+									<table class="max_width" width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+										<tr align="center">												
+											<td width="60%" align="center">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+
+														<td width="100%" class="bt" bgcolor="#ff8300" height="35" align="center">
+															<a href="{{ recommendations[i]['productLink'] }}&consultoria={{references.ESPACO}}" target="_blank" style="text-decoration: none; color: #ffffff"><font face="Verdana, Geneva, sans-serif" class="txt_btn_mobile" color="#ffffff" style="font-size: 15px; display: block;"><b>EU QUERO</b></font></a>
+														</td>
+
+													</tr>
+												</table>
+											</td>
+											<td width="40%" align="center"></td>												
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>				
+					<td width="2%"></td>
+				</tr>
+
+			</table>
+
+			<table class="max_width" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+
+				<tr>
+					<td height="15"></td>
+				</tr>
+				<tr>
+					<td width="10%"></td>
+					<td width="80%" style="border-top: 1px dashed #b3b3b3"></td>
+					<td width="10%"></td>
+				</tr>
+				<tr>
+					<td height="15"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>	
+
+	<tr>
+		<td height="25"></td>
+	</tr>
+</table>
+{% set c = c + 3 %}
+{% endfor %}
+<!-- END RECOMMENDATIONS -->
+{% endif %}
+<!-- Final TWIG -->

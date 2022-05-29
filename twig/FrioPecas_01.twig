@@ -1,0 +1,373 @@
+{% set totalProducts=products|length %}
+{% set totalRecommendations=recommendations|length %}
+{% if totalProducts > 0 %}
+<!-- 1/LINHA -->
+	<table width="660" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">
+		{% for i in 0..(totalProducts-1) %}
+		<tr>
+			<td align="center">
+				<table width="660" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">				
+					<tr>
+						<td width="230" height="200V" align="center">
+							<!-- IMG -->
+							<table width="200" cellpadding="15" cellspacing="0" border="0" align="center">
+								<tr>
+									<td width="200V" align="center">
+										<a href="{{ products[i]['productLink'] }}">
+											<img src="{{ products[i]['image'] }}" width="100%" border="0" style="display: block;">
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!-- END IMG -->	
+						</td>
+						<td width="370" align="center">
+							<!-- NOME PRODUTO -->
+							<table width="350" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="left" width="350" style="padding: 0px">
+										<p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #001D3C; font-weight: bold;">{{ products[i]['productName'] }}</p>
+									</td>
+								</tr>
+							</table>
+							<!-- END NOME PRODUTO -->						
+							
+							<table width="370" border="0" cellpadding="0" cellspacing="0" align="left">
+								<tr>
+									<td align="left">
+										{% if products[i]['price'] > products[i]['priceBy'] %}
+										<!-- PRECO DE -->
+										<table width="150" cellpadding="0" cellspacing="0" border="0" align="left">
+											<tr>
+												<td valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3; padding-bottom: 1px; padding-top: 20px;">
+													De: <span style="text-decoration: line-through; font-weight: bold;color: #4ea2e0; font-size: 18px">{{ products[i]['price'] }}</span>
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- END PRECO DE -->
+										<!-- PRECO POR -->
+										<table width="150" cellpadding="0" cellspacing="0" border="0" align="left">
+											<tr>
+												<td valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3; padding-bottom: 1px; padding-top: 20px;">
+													Por: <span style="text-decoration: none; font-weight: bold;color: #4ea2e0; font-size: 18px">{{ products[i]['priceBy'] }} </span>
+												</td>
+											</tr>
+										</table>
+										<!-- END PRECO POR -->
+										<!-- PARCELAMENTO -->
+										{% if products[i]['installment'] > 1 %}
+										<table width="150" cellpadding="0" cellspacing="0" border="0" align="left">
+											<tr>
+												<td valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12pt; color: #b3b3b3; padding-left: 20px;">
+													Em <b>{{ products[i]['installment'] }}x</b> de <b>R${{ products[i]['installmentValue'] | number_format(2, ',', '.') }}</b> s/ juros
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- END PARCELAMENTO -->
+									</td>
+									<td>
+										<!-- CTA -->
+										<table width="100" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 50px 50px 0px 0px">
+											<tr>
+												<td valign="top" align="right" width="100" height="45">
+													<a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff;">
+														<table style="width: 100px; max-width: 100px; min-width: 100px; padding: 0px: " cellpadding="0" cellspacing="0" align="left">
+															<tr>
+																<td align="center" style="width: 100px; height: 40px; border: 0px; padding: 5px; background-color: #4ea2e0; border-radius: 5px;">
+																	<a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em">COMPRAR
+																	</a>
+																</td>
+															</tr>
+														</table>
+													</a>
+												</td>
+											</tr>
+										</table>
+										<!--END  CTA -->	
+									</td>
+								</tr>
+							</table>			
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endif %}
+{% if totalRecommendations >= 3 %}
+<!-- RECOMENDATIONS -->
+<br>
+
+	<table cellpadding="0" cellspacing="0" align="center" style="width: 660px; max-width: 660px; min-width: 660px; background-color: #003369;">
+		<tr>
+			<td align="center" style="padding: 15px 0px">
+				<p style="font-family: Arial Nova, sans-serif; color: #fff; ">
+					- OFERTAS ESPECIAIS PARA VOCÊ - 
+				</p>
+			</td>
+		</tr>
+	</table>
+
+<br>
+<!-- 3/linha -->
+{% set c=0 %}
+{% set totalLines = (totalRecommendations / 3) | round(0, 'floor') %}
+{% for l in range(1, totalLines) %}
+
+	<table width="660" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tr>
+			<!-- Product 1 -->
+			<td valign="top" align="center">
+				<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr>
+						<td align="center">
+							<!-- IMG_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td width="174" height="174" valign="top" align="center">
+										<a href="{{ recommendations[c]['productLink'] }}" target="_blank">
+											<img src="{{ recommendations[c]['image'] }}" width="100%" border="0" style="display: block;">
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!-- NOME_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="left" valign="top" height="100" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #b3b3b3">
+										<strong>{{ recommendations[c]['productName'] }}</strong>
+									</td>
+								</tr>
+							</table>
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="center" height="70" valign="center">
+										<!-- DE_PRICE_PRODUCT -->
+										{% if recommendations[c]['price'] > recommendations[c]['priceBy'] %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													De: <span style="text-decoration: line-through; font-weight: bold;color: #4ea2e0; font-size: 12px">{{ recommendations[c]['price'] }}</span>
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- POR_PRICE_PRODUCT -->
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">Por: <span style="text-decoration: line-through; font-weight: bold;color: #003369; font-size: 16px">{{ recommendations[c]['priceBy'] }}
+												</td>
+											</tr>
+										</table>
+										<!-- PARCELA_PRODUCT -->
+										{% if recommendations[(c + 2)]['installment'] > 1 %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													Em {{ recommendations[c]['installment'] }}x {{ recommendations[c]['installmentValue'] | number_format(2, ',', '.') }} sem juros
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+									</td>
+								</tr>
+							</table>
+							<!-- CTA -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 20px">
+								<tr>
+									<td valign="top" align="left">
+										<a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff;">
+											<table style="width: 150px; max-width: 150px; min-width: 150px; padding-bottom: 10px: " cellpadding="0" cellspacing="0" align="left">
+												<tr>
+													<td align="center" style="width: 150px; height: 35px; border: 0px; padding: 5px; background-color: #4ea2e0; border-radius: 5px;">
+														<a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em">
+															COMPRAR
+														</a>
+													</td>
+												</tr>
+											</table>
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!--END  CTA -->				
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="1" bgcolor="#4ea2e0" align="center" valign="top" style="background-color:#00AEC8;">
+			</td>
+			<!-- Product 2 -->
+			<td valign="top" align="center">
+				<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr>
+						<td align="center">
+							<!-- IMG_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td width="174" height="174" valign="top" align="center">
+										<a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank">
+											<img src="{{ recommendations[(c + 1)]['image'] }}" width="100%" border="0" style="display: block;">
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!-- NOME_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="left" valign="top" height="100" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #b3b3b3">
+										<strong>{{ recommendations[(c + 1)]['productName'] }}</strong>
+									</td>
+								</tr>
+							</table>
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="center" height="70" valign="center">
+										<!-- DE_PRICE_PRODUCT -->
+										{% if recommendations[(c + 1)]['price'] > recommendations[(c + 1)]['priceBy'] %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													De: <span style="text-decoration: line-through; font-weight: bold;color: #4ea2e0; font-size: 12px">{{ recommendations[(c + 1)]['price'] }}</span>
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- POR_PRICE_PRODUCT -->
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													Por: <span style="text-decoration: line-through; font-weight: bold;color: #003369; font-size: 16px">{{ recommendations[(c + 1)]['priceBy'] }}</span>
+												</td>
+											</tr>
+										</table>
+										<!-- PARCELA_PRODUCT -->
+										{% if recommendations[(c + 1)]['installment'] > 1 %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													Em {{ recommendations[(c + 1)]['installment'] }}x {{ recommendations[(c + 1)]['installmentValue'] | number_format(2, ',', '.') }} sem juros
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+									</td>
+								</tr>
+							</table>
+							<!-- CTA -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 20px">
+								<tr>
+									<td valign="top" align="left">
+										<a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff;">
+											<table style="width: 150px; max-width: 150px; min-width: 150px; padding-bottom: 10px: " cellpadding="0" cellspacing="0" align="left">
+												<tr>
+													<td align="center" style="width: 150px; height: 35px; border: 0px;padding: 5px; background-color: #4ea2e0; border-radius: 5px;">
+														<a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em">
+															COMPRAR
+
+														</a>
+													</td>
+												</tr>
+											</table>
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!--END  CTA -->				
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="1" bgcolor="#4ea2e0" align="center" valign="top" style="background-color:#00AEC8;">
+			</td>
+			<!-- Product 3 -->
+			<td valign="top" align="center">
+				<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr>
+						<td align="center">
+							<!-- IMG_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td width="174" height="174" valign="top" align="center">
+										<a href="{{ recommendations[(c + 2)]['productLink'] }}" target="_blank">
+											<img src="{{ recommendations[(c + 2)]['image'] }}" width="100%" border="0" style="display: block;">
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!-- NOME_PRODUCT -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="left" valign="top" height="100" style="padding: 10px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #b3b3b3">
+										<strong>{{ recommendations[(c + 2)]['productName'] }}</strong>
+									</td>
+								</tr>
+							</table>
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="center" height="70" valign="center">
+										<!-- DE_PRICE_PRODUCT -->
+										{% if recommendations[(c + 2)]['price'] > recommendations[(c + 2)]['priceBy'] %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													De: <span style="text-decoration: line-through; font-weight: bold;color: #4ea2e0; font-size: 12px">{{ recommendations[(c + 2)]['price'] }}</span>
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- POR_PRICE_PRODUCT -->
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													Por: <span style="text-decoration: line-through; font-weight: bold;color: #003369; font-size: 16px">{{ recommendations[(c + 2)]['priceBy'] }}</span>
+												</td>
+											</tr>
+										</table>
+										<!-- PARCELA_PRODUCT -->
+										{% if recommendations[(c + 2)]['installment'] > 1 %}
+										<table width="174" cellpadding="0" cellspacing="0" border="0" align="center">
+											<tr>
+												<td align="left" valign="top" style="padding: 0px 0px 0px 16px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #b3b3b3">
+													Em {{ recommendations[(c + 2)]['installment'] }}x {{ recommendations[(c + 2)]['installmentValue'] | number_format(2, ',', '.') }} sem juros
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+									</td>
+								</tr>
+							</table>
+							<!-- CTA -->
+							<table width="174" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 20px">
+								<tr>
+									<td valign="top" align="left">
+										<a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff; ho">
+											<table style="width: 150px; max-width: 150px; min-width: 150px; padding-bottom: 10px: " cellpadding="0" cellspacing="0" align="left">
+												<tr>
+													<td align="center" style="width: 150px; height: 35px; border: 0px;padding: 5px; background-color: #4ea2e0;border-radius: 5px;">
+														<a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em">
+															COMPRAR
+														</a>
+													</td>
+												</tr>
+											</table>
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!--END  CTA -->				
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</center>
+	{% set c = c + 3 %}
+	<br>
+	{% endfor %}
+	<!-- END RECOMMENDATIONS -->
+	{% endif %}

@@ -1,0 +1,93 @@
+{% set totalProducts=products|length %}
+{% set totalRecommendations=recommendations|length %}
+{% if totalProducts > 0 %}
+<!-- 1/LINHA -->
+	<table width="660" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">
+		{% for i in 0..(totalProducts-1) %}
+		<tr>
+			<td align="center">
+				<table width="660" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">				
+					<tr>
+						<td width="230" height="200V" align="center">
+							<!-- IMG -->
+							<table width="200" cellpadding="15" cellspacing="0" border="0" align="center" style="border-radius:50px">
+								<tr>
+									<td width="200V" height="200" align="center">
+										<a href="{{ products[i]['productLink'] }}">
+											<img src="{{ products[i]['image'] }}" width="100%" border="0" style="display: block;">
+										</a>
+									</td>
+								</tr>
+							</table>
+							<!-- END IMG -->	
+						</td>
+						<td width="370" align="center">
+							<!-- NOME PRODUTO -->
+							<table width="350" cellpadding="0" cellspacing="0" border="0" align="center">
+								<tr>
+									<td align="left" width="350" style="padding: 0px">
+										<p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #001D3C; font-weight: bold;">{{ products[i]['productName'] }}</p>
+									</td>
+								</tr>
+							</table>
+							<!-- END NOME PRODUTO -->						
+							
+							<table width="370" border="0" cellpadding="0" cellspacing="0" align="left">
+								<tr>
+									<td align="left">
+										<!-- PARCELAMENTO -->
+										{% if products[i]['installment'] > 1 %}
+										<table width="150" cellpadding="0" cellspacing="0" border="0" align="left">
+											<tr>
+												<td valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12pt; color: #95c93d; padding-left: 20px;">
+													<b>{{ products[i]['installment'] }}x</b> de <b>R${{ products[i]['installmentValue'] | number_format(2, ',', '.') }}</b> <span style="color:#000000; font-weight:bold;">s/ juros</span>
+												</td>
+											</tr>
+										</table>
+										{% endif %}
+										<!-- END PARCELAMENTO -->
+										{% if products[i]['price'] > products[i]['priceBy'] %}
+										<!-- PRECO DE -->
+										<table width="150" cellpadding="0" cellspacing="0" border="0" align="left">
+											<tr>
+												<td valign="top" align="left" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #000000; padding-bottom: 1px; padding-top: 20px;">
+													<span style="text-decoration: line-through; font-weight: lighter;color: #000000; font-size: 18px">{{ products[i]['price'] }}</span>
+										{% endif %}
+										<!-- END PRECO DE -->
+										<!-- PRECO POR -->
+										<span style="text-decoration: none; font-weight: bold;color: #118bc9; font-size: 18px">{{ products[i]['priceBy'] }} </span> <span style="color:#000000; font-weight:bold;">à vista</span>
+												</td>
+											</tr>
+										</table>
+										<!-- END PRECO POR -->
+									</td>
+									<td>
+										<!-- CTA -->
+										<table width="100" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 50px 50px 0px 0px">
+											<tr>
+												<td valign="top" align="right" width="100" height="45">
+													<a href="{{ products[i]['productLink'] }}" style="text-decoration: none; color: #fff;">
+														<table style="width: 150px; max-width: 150px; min-width: 150px; padding: 0px: " cellpadding="0" cellspacing="0" align="left">
+														<tr>
+															<td align="center" style="width: 150px; height: 40px; border: 0px; padding: 5px; background-color: #118bc9 ; border-radius: 25px;">
+																<a href="{{ products[i]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; letter-spacing: 0.1em;">COMPRAR
+																</a>
+															</td>
+														</tr>
+													</table>
+													</a>
+												</td>
+											</tr>
+										</table>
+										<!--END  CTA -->	
+									</td>
+								</tr>
+							</table>			
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endif %}

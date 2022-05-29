@@ -1,0 +1,103 @@
+<table align="center" cellpadding="0" cellpadding="0" border="0" width="500">
+	<tr>
+		<td align="center">
+			<img src="https://imagem-de-campanha.s3.amazonaws.com/Vivara/BTG/2022/202205/twig/vivara_01.png">
+		</td>
+	</tr>
+</table>
+<table align="center" cellpadding="0" cellpadding="0" border="0" width="500">
+	<tr>
+		<td align="center">
+			<img src="https://imagem-de-campanha.s3.amazonaws.com/Vivara/BTG/2022/202205/twig/vivara_02.jpg">
+		</td>
+	</tr>
+</table>
+{% set totalProducts=products|length %}
+{% if totalProducts > 0 %}
+<!-- 1/LINHA -->
+<table width="500" cellpadding="0" cellspacing="0" border="0" align="center">
+	{% for i in 0..(totalProducts-1) %}
+	<tr>
+		<td align="center" style="margin: 5px;">
+			<a href="{{ products[i]['productLink'] }}" style="text-decoration:none;">
+				<table align="center" cellpadding="0" cellpadding="0" border="0" width="240" bgcolor="#fff" style="border: 2px solid #F0F0F0;">
+					<tr>
+						<td valign="top">
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="240">
+								<tr>
+									<td align="center" valign="middle">
+										<img src="{{ products[i]['image'] }}" width="100%">
+									</td>
+								</tr>
+							</table>
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="240">
+								<tr>
+									<td align="center">
+										<p style="text-align:center; font-family: sans-serif; color:#000; font-size: 12px;">
+											{{ products[i]['productName'] }}
+										</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table align="center" cellpadding="0" cellpadding="0" border="0" width="240" bgcolor="#fff">
+					<tr>
+						<td width="" valign="bottom">
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="">
+								<tr>
+									<td align="center">
+										<img src="https://imagem-de-campanha.s3.amazonaws.com/Vivara/BTG/2022/202205/twig/vivara_cta.png" style="padding-top: 15px">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</a>
+		</td>
+		<td width="10"></td>
+		<td align="center" style="margin: 5px;">
+			<a href="{{ products[i]['productLink'] }}" style="text-decoration:none;">
+				<table align="center" cellpadding="0" cellpadding="0" border="0" width="240" bgcolor="#fff" style="border: 2px solid #F0F0F0;">
+					<tr>
+						<td valign="top">
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="240">
+								<tr>
+									<td align="center" valign="middle">
+										<img src="{{ products[i]['image'] }}" width="100%">
+									</td>
+								</tr>
+							</table>
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="240">
+								<tr>
+									<td align="center">
+										<p style="text-align:center; font-family: sans-serif; color:#000; font-size: 12px;">
+											{{ products[i]['productName'] }}
+										</p>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table align="center" cellpadding="0" cellpadding="0" border="0" width="240" bgcolor="#fff">
+					<tr>
+						<td width="" valign="bottom">
+							<table align="center" cellpadding="0" cellpadding="0" border="0" width="">
+								<tr>
+									<td align="center">
+										<img src="https://imagem-de-campanha.s3.amazonaws.com/Vivara/BTG/2022/202205/twig/vivara_cta.png" style="padding-top: 15px">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}

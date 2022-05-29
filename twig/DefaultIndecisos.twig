@@ -1,0 +1,331 @@
+{% set totalProducts=products|length %}{% set totalRecommendations=recommendations|length %}{% if totalProducts > 0 %}
+<!-- OFERTA -->
+<table width="600" bgcolor="" cellpadding="0" cellspacing="0" align="center">
+    {% set totalList=totalProducts / 2 %}
+    {% set c=0 %}
+    {% for i in 1..totalList %}
+    <tr>
+        <td align="center" width="600" bgcolor="#ffffff">
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                         <a href="{{ products[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ products[c]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                        <a href="{{ products[c+1]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ products[c+1]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ products[c]['productName'] }}
+                        </p>
+                    </td>
+                    <td width="289" bgcolor="" align="center" valign="top">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ products[(c+1)]['productName'] }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" bgcolor="" align="center">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ products[c]['percentage'] }}% compraram
+                        </p>
+                    </td>
+                    <td width="289" bgcolor="" align="center">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ products[(c+1)]['percentage'] }}% compraram
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="289" height="60" bgcolor="" align="center">
+                        <table width="289" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                            <tr>
+                                <td align="center" width="289">
+                                    <a target="_blank" href="{{ products[c]['productLink'] }}" style="text-decoration: none;">
+                                        <img src="" width="289" alt="Imagem indispon&iacute;vel"/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="289" height="60" bgcolor="" align="center">
+                        <table width="289" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                            <tr>
+                                <td align="center" width="289">
+                                    <a target="_blank" href="{{ products[(c+1)]['productLink'] }}" style="text-decoration: none;">
+                                        <img src="" width="289" alt="Imagem indispon&iacute;vel"/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>                   
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% set c=c+2 %}
+    {% endfor %}
+</table>
+<!-- FIM OFERTA -->
+{% endif %}{% if totalRecommendations > 0 %}
+<table width="600" bgcolor="" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+        <td align="center">
+            <img src="https://imagem-de-campanha.s3.amazonaws.com/Vivara/faixa_recomendacao.png" border="0" style="display: block;">
+        </td>
+    </tr>
+    {% if totalRecommendations in [3,6,9,12] %}{% set totalList=totalRecommendations / 3 %}
+    {% set c=0 %}
+    {% for i in 1..totalList %}
+    <tr>
+        <td align="center" bgcolor="#ffffff">
+            <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+                <tr>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[c]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[(c + 1)]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                    <td width="188" bgcolor="" align="center">
+                        <a href="{{ recommendations[(c + 2)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                            <img border="0" src="{{ recommendations[(c + 2)]['image'] }}" width="188" alt="Imagem indispon&iacute;vel">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="188" bgcolor="" align="center" valign="top">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ recommendations[c]['productName'] }}
+                        </p>
+                    </td>
+                    <td width="188" bgcolor="" align="center" valign="top">
+                        <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                            {{ recommendations[(c + 1)]['productName'] }}
+                        </p>
+                    </strong>
+                </td>
+                <td width="188" bgcolor="" align="center" valign="top">
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        {{ recommendations[(c + 2)]['productName'] }}
+                    </p>
+                </strong>
+            </td>
+        </tr>
+        <tr>
+            <td width="188" bgcolor="" align="center">
+                {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    DE {{ recommendations[c]['price'] }}
+                </p>
+                {% endif %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    POR {{ recommendations[c]['priceBy'] }}
+                </p>
+            </td>
+            <td width="188" bgcolor="" align="center">
+                {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    DE {{ recommendations[(c + 1)]['price'] }}
+                </p>
+                {% endif %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    POR {{ recommendations[(c + 1)]['priceBy'] }}
+                </p>
+            </td>
+            <td width="188" bgcolor="" align="center">
+                {% if recommendations[(c + 2)]['priceByNum'] < recommendations[(c + 2)]['priceNum'] %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    DE {{ recommendations[(c + 2)]['price'] }}
+                </p>
+                {% endif %}
+                <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                    {{ recommendations[(c + 2)]['priceBy'] }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="188" height="60" bgcolor="" align="center">
+                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                    <tr>
+                        <td align="center">
+                            <a target="_blank" href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;">
+                                <img src="" width="188" alt="Imagem indispon&iacute;vel"/>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="188" height="60" bgcolor="" align="center">
+                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                    <tr>
+                        <td align="center">
+                            <a target="_blank" href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;">
+                                <img src="" width="188" alt="Imagem indispon&iacute;vel"/>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="188" height="60" bgcolor="" align="center">
+                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                    <tr>
+                        <td align="center">
+                            <a target="_blank" href="{{ recommendations[(c + 2)]['productLink'] }}" style="text-decoration: none;">
+                                <img src="" width="188" alt="Imagem indispon&iacute;vel"/>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</td>
+</tr>
+{% set c=c + 3 %}{% endfor %}{% elseif totalRecommendations in [2,4,8,10] %}{% set totalList=totalRecommendations / 2 %}{% set c=0 %}{% for i in 1..totalList %}
+<tr>
+</tr>
+<tr>
+    <td>
+        <table width="100%" cellpadding="0" cellspacing="0" bgcolor="" align="center">
+            <tr>
+                <td width="289" bgcolor="" align="center">
+                    <a href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                        <img border="0" src="{{ recommendations[c]['image'] }}" width="289" alt="Imagem indispon&iacute;vel">
+                    </a>
+                </td>
+                <td width="289" bgcolor="" align="center">
+                    <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                        <img border="0" src="{{ recommendations[(c + 1)]['image'] }}" width="289" alt="Imagem indispon&iacute;vel">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td width="289" bgcolor="" align="center" valign="top">
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        {{ recommendations[c]['productName'] }}
+                    </p>
+                </td>
+                <td width="289" bgcolor="" align="center" valign="top">
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        {{ recommendations[(c + 1)]['productName'] }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="289" bgcolor="" align="center">
+                    {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        DE {{ recommendations[c]['price'] }}
+                    </p>
+                    {% endif %}
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        POR {{ recommendations[c]['priceBy'] }}                        
+                    </p>
+                    <hr color="#cccccc" size="1" width="220">
+                </td>
+                <td width="289" bgcolor="" align="center">
+                    <br>
+                    <hr color="#cccccc" size="1" width="220">
+                    {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        DE {{ recommendations[(c + 1)]['price'] }}
+                    </p>
+                    {% endif %}
+                    <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                        POR{{ recommendations[(c + 1)]['priceBy'] }}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="289" height="60" bgcolor="" align="center">
+                    <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                        <tr>
+                            <td align="center">
+                                <a target="_blank" href="{{ recommendations[c]['productLink'] }}" style="text-decoration: none;">
+                                    <img src="" width="" alt="Imagem indispon&iacute;vel"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="289" height="60" bgcolor="" align="center">
+                    <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                        <tr>
+                            <td align="center">
+                                <a target="_blank" href="{{ recommendations[(c + 1)]['productLink'] }}" style="text-decoration: none;">
+                                    <img src="" width="" alt="Imagem indispon&iacute;vel"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{% set c=c + 2 %}{% endfor %}{% else %}{% if totalRecommendations > 0 %}{% for i in 0..(totalRecommendations - 1) %}
+<tr>
+    <td>
+        <table bgcolor="" cellpadding="0" cellspacing="2" width="100%" align="center">
+            <tr>
+                <td>
+                    <table bgcolor="" cellpadding="5" cellspacing="0" width="100%" align="center">
+                        <tr>
+                            <td>
+                                <a href="{{ recommendations[i]['productLink'] }}" style="text-decoration: none;" target="_blank">
+                                    <img border="0" src="{{ recommendations[i]['image'] }}" width="200" alt="Imagem indispon&iacute;vel">
+                                </a>
+                            </td>
+                            <td>
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                                                {{ recommendations[i]['productName'] }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="">
+                                            <p style="font-family: sans-serif; font-size: 12pt; color: #000000;">
+                                                POR {{ recommendations[i]['priceBy'] }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+                                                <tr>
+                                                    <td align="center">
+                                                        <a target="_blank" href="{{ recommendations[i]['productLink'] }}" style="text-decoration: none;">
+                                                            <img src="" width="" alt="Imagem indispon&iacute;vel"/>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+{% endfor %}{% endif %}{% endif %}
+</table>
+{% endif %}
