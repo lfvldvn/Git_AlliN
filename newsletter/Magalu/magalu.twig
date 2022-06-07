@@ -1,0 +1,502 @@
+{% set totalProducts = products | length %}
+{% set totalRecommendations = recommendations | length %}
+{% if totalProducts > 0 %}
+
+<table align="center" bgcolor="#ffffff" cellspacing="0" cellpadding="0" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="text-decoration: none; -ms-text-size-adjust: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; background-color: #ffffff; font-size: 100%; font-family: 'Roboto', sans-serif; text-decoration: none;  margin:0; padding:0; width:100%; -webkit-font-smoothing: antialiased;">
+  <tr>
+    <td valign="top" align="center">
+      <table align="center" bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+        <tr>
+          <td valign="top" align="center">
+            <!-- FEATURE -->
+            <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+            <table style="max-width:640px; width:96%;" border="0" cellspacing="0" cellpadding="0" width="96%" align="center">
+              <tr>
+                <td align="center">
+                  <div style="height:6px;"></div>
+                  <table valign="top" style="min-width:256px; width:44%; display:inline-block;">
+                    <tr>
+                      <td align="center" style="width:256px">
+                        <a href="{{ products[0]['productLink'] }}">
+                          <img src="{{ products[0]['image'] }}" width="100%" height="auto" border="0" style="vertical-align:middle; display:inline-block; text-decoration:none; max-width:180px;" alt="{{ products[0]['productLink'] }}" />
+                        </a>
+                        <div style="height:1px;"></div>
+                      </td>
+                    </tr>
+                  </table>
+                  <table style="min-width:260px; min-height:191px; width:49%; display:inline-block;">
+                    <tr>
+                      <td align="center">
+                        <div style="height:6px;"></div>
+                        <a href="{{ products[0]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                          <span style="font-size:20px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ products[0]['productName'] }}</span>
+                          <div style="height:12px;"></div>
+                          {% if products[0]['price'] > products[0]['priceBy'] %}
+                            <span style="color:#ff253a"><strike>de R$ {{ products[0]['price'] }}</strike></span>
+                            <br /> {% endif %}
+                          <span style="color: #0086ff; ">por R$ </span> <b style="font-size:28px; font-weight:0; color: #0086ff;"> {{ products[0]['priceBy'] }}</b>
+                          <br />
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="width: 313px;">
+                        <div style="height:18px;"></div>
+                        <a href="{{ products[0]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                          <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                        </a>
+                        <div style="height:6px;"></div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+            <!-- END FEATURE -->
+            {% if totalProducts in [4] or totalProducts in [4,7] or totalProducts in [4,7,10] %}
+              <!-- 3PL -->
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <table style="max-width:640px; width:96%;" border="0" cellspacing="0" cellpadding="0" width="96%" align="center">
+                <tbody valign="top">
+                <tr valign="top">
+                  <td valign="top" align="center">
+                    <table style="max-width:640px; width:96%;" border="0" cellspacing="0" cellpadding="0" width="96%" align="center">
+                      {% set totalList=(totalProducts - 1) / 3 %} {% set c=1 %} {% for i in 1..totalList %}
+                        <tr align="center" style="min-width:130px; max-width:200px; width:32%; display: inline-block">
+                          <td align="center" style="min-width:130px; max-width:160px; width:80%">
+                            <a href="{{ products[c]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                              <table>
+                                <tr>
+                                  <td height="6px" align="center"></td>
+                                </tr>
+                                <tr>
+                                  <td valign="top" align="center">
+                                    <a href="{{ products[c]['productLink'] }}">
+                                      <img src="{{ products[c]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px;" alt="{{ products[c]['productLink'] }}" />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <a href="{{ products[c]['productLink'] }}" style="font: 16px Arial; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                      <span style="font-size:16px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ products[c]['productName'] }}</span>
+                                      <div style="height:14px;"></div>
+                                      {% if products[c]['priceNum'] > products[c]['priceByNum'] %}
+                                        <span style="color:#ff253a"><strike>de R$ {{ products[c]['price'] }}</strike></span>
+                                        <br /> {% endif %}
+                                      <div style="height:2px;"></div>
+
+                                      <span style="color: #0086ff; ">por R$ </span> <b style="font-size:20px; font-weight:0; color: #0086ff;"> {{ products[c]['priceBy'] }}</b>
+                                      <br />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="max-width:120px!important;" align="center">
+                                    <br />
+                                    <a href="{{ products[c]['productLink'] }}" target="_blank" style="text-decoration:none; ">
+                                      <img src="https://s3.amazonaws.com/bobby-dependencies/email/comprar.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                    </a>
+                                    <br />
+                                  </td>
+                                </tr>
+                              </table>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr align="center" style="min-width:130px; max-width:200px; width:32%; display: inline-block">
+                          <td align="center" style="min-width:130px; max-width:160px; width:80%">
+                            <a href="{{ products[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                              <table>
+                                <tr>
+                                  <td height="6px" align="center"></td>
+                                </tr>
+                                <tr>
+                                  <td valign="top" align="center">
+                                    <a href="{{ products[(c + 1)]['productLink'] }}">
+                                      <img src="{{ products[(c + 1)]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px;" alt="{{ products[(c + 1)]['productLink'] }}" />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <a href="{{ products[(c + 1)]['productLink'] }}" style="font: 16px Arial; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                      <span style="font-size:16px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ products[(c + 1)]['productName'] }}</span>
+                                      <div style="height:14px;"></div>
+                                      {% if products[(c + 1)]['priceNum'] > products[(c + 1)]['priceByNum'] %}
+                                        <span style="color:#ff253a"><strike>de R$ {{ products[(c + 1)]['price'] }}</strike></span>
+                                        <br /> {% endif %}
+                                      <div style="height:2px;"></div>
+
+                                      <span style="color: #0086ff; ">por R$ </span> <b style="font-size:20px; font-weight:0; color: #0086ff;"> {{ products[(c + 1)]['priceBy'] }}</b>
+                                      <br />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="max-width:120px!important;" align="center">
+                                    <br />
+                                    <a href="{{ products[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none; ">
+                                      <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                    </a>
+                                    <br />
+                                  </td>
+                                </tr>
+                              </table>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr align="center" style="min-width:130px; max-width:200px; width:32%; display: inline-block">
+                          <td align="center" style="min-width:130px; max-width:160px; width:80%">
+                            <a href="{{ products[(c + 2)]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                              <table>
+                                <tr>
+                                  <td height="6px" align="center"></td>
+                                </tr>
+                                <tr>
+                                  <td valign="top" align="center">
+                                    <a href="{{ products[(c + 2)]['productLink'] }}">
+                                      <img src="{{ products[(c + 2)]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px;" alt="{{ products[(c + 2)]['productLink'] }}" />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <a href="{{ products[(c + 2)]['productLink'] }}" style="font: 16px Arial; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                      <span style="font-size:16px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ products[(c + 2)]['productName'] }}</span>
+                                      <div style="height:14px;"></div>
+                                      {% if products[(c + 2)]['priceNum'] > products[(c + 2)]['priceByNum'] %}
+                                        <span style="color:#ff253a"><strike>de R$ {{ products[(c + 2)]['price'] }}</strike></span>
+                                        <br /> {% endif %}
+                                      <div style="height:2px;"></div>
+
+                                      <span style="color: #0086ff; ">por R$ </span> <b style="font-size:20px; font-weight:0;"> {{ products[(c + 2)]['priceBy'] }}</b>
+                                      <br />
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="max-width:120px!important;" align="center">
+                                    <br />
+                                    <a href="{{ products[(c + 2)]['productLink'] }}" target="_blank" style="text-decoration:none; ">
+                                      <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                    </a>
+                                    <br />
+                                  </td>
+                                </tr>
+                              </table>
+                            </a>
+                          </td>
+                        </tr>
+                        {% set c=c + 3 %} {% endfor %}
+                    </table>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <!-- END 3PL -->
+            {% elseif totalrecommendations in [3] or totalrecommendations in [3,5] or totalrecommendations in [3,5,7] or totalrecommendations in [3,5,7,9] %} {% set totalList=(totalrecommendations - 1) / 2 %} {% set c=1 %} {% for i in 1..totalList %}
+              <!-- 2PL -->
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <table style="max-width:590px; width:96%;  background-color: #ffffff; border-radius:6px;" border="0" cellspacing="0" cellpadding="0" width="96%" align="center" bgcolor="#ffffff">
+                <tbody valign="top">
+                <tr valign="top">
+                  <td valign="top" align="center">
+                    <table valign="top" style="width:45%; display: inline-block;" cellpadding="0" cellspacing="0">
+                      <tbody valign="top">
+                      <tr valign="top">
+                        <td valign="top" align="left">
+                          <a href="{{ recommendations[c]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                            <table>
+                              <tr>
+                                <td height="6px" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td valign="top" align="center">
+                                  <a href="{{ recommendations[c]['productLink'] }}">
+                                    <img src="{{ recommendations[c]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px; width:100%;" alt="{{ recommendations[c]['productLink'] }}" />
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center">
+                                  <a href="{{ recommendations[c]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                    <span style="font-size:18px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ recommendations[c]['productName'] }}</span>
+                                    <div style="height:12px;"></div>
+                                    {% if recommendations[c]['priceNum'] > recommendations[c]['priceByNum']%}
+                                      <span style="color:#ff253a"><strike>de R$ {{ recommendations[c]['price'] }}</strike></span>
+                                      <br /> {% endif %}
+                                    <div style="height:4px;"></div>
+                                    <span style="color: #0086ff; ">por R$ </span> <b style="font-size:24px; font-weight:0;"> {{ recommendations[c]['priceBy'] }}</b>
+                                    <br />
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="max-width:120px;" align="center">
+                                  <br />
+                                  <a href="{{ recommendations[c]['productLink'] }}" target="_blank" style="text-decoration:none">
+                                    <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                  </a>
+                                  <br />
+                                </td>
+                              </tr>
+                            </table>
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+
+                    <table valign="top" style="width:3%; display: inline-block;" cellpadding="0" cellspacing="0">
+                      <tbody valign="top">
+                      <tr valign="top">
+                        <td valign="top" align="left">
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+
+                    <table valign="top" style="width:45%; display: inline-block;" cellpadding="0" cellspacing="0">
+                      <tbody valign="top">
+                      <tr valign="top">
+                        <td valign="top" align="left">
+                          <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                            <table>
+                              <tr>
+                                <td height="6px" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td valign="top" align="center">
+                                  <a href="{{ recommendations[(c + 1)]['productLink'] }}">
+                                    <img src="{{ recommendations[(c + 1)]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px; width:100%;" alt="{{ recommendations[(c + 1)]['productLink'] }}" />
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center">
+                                  <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                    <span style="font-size:18px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ recommendations[(c + 1)]['productName'] }}</span>
+                                    <div style="height:12px;"></div>
+                                    {% if recommendations[(c + 1)]['priceNum'] > recommendations[(c + 1)]['priceByNum'] %}
+                                      <span style="color:#ff253a"><strike>de R$ {{ recommendations[(c + 1)]['price'] }}</strike></span>
+                                      <br /> {% endif %}
+                                    <div style="height:4px;"></div>
+                                    <span style="color: #0086ff; ">por R$ </span> <b style="font-size:24px; font-weight:0;"> {{ recommendations[(c + 1)]['priceBy'] }}</b>
+                                    <br />
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="max-width:120px;" align="center">
+                                  <br />
+                                  <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none">
+                                    <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                  </a>
+                                  <br />
+                                </td>
+                              </tr>
+                            </table>
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <!-- END 2PL -->
+              {% set c=c + 2 %} {% endfor %} {% else %} {% if totalProducts > 1 %} {% for i in 1..(totalProducts - 1) %}
+              <!-- 1PL -->
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <table style="max-width:590px; width:96%; background-color:#ffffff; border-radius:6px" border="0" cellspacing="0" cellpadding="0" width="96%" align="center" bgcolor="#ffffff">
+                <tr>
+                  <td align="center">
+                    <div style="height:6px;"></div>
+                    <table valign="top" style="min-width:256px; width:44%; display:inline-block;">
+                      <tr>
+                        <td align="center" style="width:256px">
+                          <a href="{{ products[i]['productLink'] }}">
+                            <img src="{{ products[i]['image'] }}" width="100%" height="auto" border="0" style="vertical-align:middle; display:inline-block; text-decoration:none; max-width:180px;" alt="{{ products[i]['productLink'] }}" />
+                          </a>
+                          <div style="height:1px;"></div>
+                        </td>
+                      </tr>
+                    </table>
+                    <table style="min-width:260px; min-height:191px; width:49%; display:inline-block;">
+                      <tr>
+                        <td align="center">
+                          <div style="height:6px;"></div>
+                          <a href="{{ products[i]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                            <span style="font-size:20px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ products[i]['productName'] }}</span>
+                            <div style="height:12px;"></div>
+                            {% if products[i]['priceNum'] > products[i]['priceByNum'] %}
+                              <span style="color:#ff253a"><strike>de R$ {{ products[i]['price'] }}</strike></span>
+                              <br /> {% endif %}
+                            <span style="color: #0086ff; ">por R$ </span> <b style="font-size:28px; font-weight:0;"> {{ products[i]['priceBy'] }}</b>
+                            <br />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="width: 313px;">
+                          <div style="height:18px;"></div>
+                          <a href="{{ products[i]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                            <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                          </a>
+                          <div style="height:6px;"></div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+              <!-- END 1PL -->
+            {% endfor %} {% endif %} {% endif %}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      {% endif %}
+
+
+      {% if totalRecommendations >= 2 %}
+      <table style="text-decoration: none; -ms-text-size-adjust: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; background-color: #ffffff; font-size: 100%; font-family: 'Roboto', sans-serif; text-decoration: underline;  margin:0; padding:0; width:100%; -webkit-font-smoothing: antialiased;">
+        <tr>
+          <td>
+            <table bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+              <tr>
+                <td valign="top" align="center">
+
+                  <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+
+                  {% set c=0 %} {% set totalLines = (totalRecommendations / 2) | round(0, 'floor') %}
+                  {% for l in range(1, totalLines) %}
+                    <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+                    <table style="max-width:590px; width:96%;  background-color: #ffffff; border-radius:6px;" border="0" cellspacing="0" cellpadding="0" width="96%" align="center" bgcolor="#ffffff">
+                      <tbody valign="top">
+                      <tr valign="top">
+                        <td valign="top" align="center">
+                          <table valign="top" style="width:45%; display: inline-block;" cellpadding="0" cellspacing="0">
+                            <tbody valign="top">
+                            <tr valign="top">
+                              <td valign="top" align="left">
+                                <a href="{{ recommendations[c]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                                  <table>
+                                    <tr>
+                                      <td height="6px" align="center"></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top" align="center">
+                                        <a href="{{ recommendations[c]['productLink'] }}">
+                                          <img src="{{ recommendations[c]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px; width:100%;" alt="{{ recommendations[c]['productLink'] }}" />
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center">
+                                        <a href="{{ recommendations[c]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                          <span style="font-size:18px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ recommendations[c]['productName'] }}</span>
+                                          <div style="height:12px;"></div>
+                                          {% if recommendations[c]['priceNum'] > recommendations[c]['priceByNum']%}
+                                            <span style="color:#ff253a"><strike>de R$ {{ recommendations[c]['price'] }}</strike></span>
+                                            <br /> {% endif %}
+                                          <div style="height:4px;"></div>
+                                          <span style="color: #0086ff; ">por R$ </span> <b style="font-size:24px; font-weight:0;"> {{ recommendations[c]['priceBy'] }}</b>
+                                          <br />
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="max-width:120px;" align="center">
+                                        <br />
+                                        <a href="{{ recommendations[c]['productLink'] }}" target="_blank" style="text-decoration:none">
+                                          <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                        </a>
+                                        <br />
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </a>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                          <table valign="top" style="width:3%; display: inline-block;" cellpadding="0" cellspacing="0">
+                            <tbody valign="top">
+                            <tr valign="top">
+                              <td valign="top" align="left">
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                          <table valign="top" style="width:45%; display: inline-block;" cellpadding="0" cellspacing="0">
+                            <tbody valign="top">
+                            <tr valign="top">
+                              <td valign="top" align="left">
+                                <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none;">
+                                  <table>
+                                    <tr>
+                                      <td height="6px" align="center"></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top" align="center">
+                                        <a href="{{ recommendations[(c + 1)]['productLink'] }}">
+                                          <img src="{{ recommendations[(c + 1)]['image'] }}" width="100%" height="auto" border="0" style="vertical-align: top; display:block; max-width:180px; width:100%;" alt="{{ recommendations[(c + 1)]['productLink'] }}" />
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center">
+                                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="font-size: 16px; color: #0086ff; letter-spacing:-0.5px; text-decoration: none;">
+                                          <span style="font-size:18px; font-weight:0;  letter-spacing:0px; color:#454545;">{{ recommendations[(c + 1)]['productName'] }}</span>
+                                          <div style="height:12px;"></div>
+                                          {% if recommendations[(c + 1)]['priceNum'] > recommendations[(c + 1)]['priceByNum'] %}
+                                            <span style="color:#ff253a"><strike>de R$ {{ recommendations[(c + 1)]['price'] }}</strike></span>
+                                            <br /> {% endif %}
+                                          <div style="height:4px;"></div>
+                                          <span style="color: #0086ff; ">por R$ </span> <b style="font-size:24px; font-weight:0;"> {{ recommendations[(c + 1)]['priceBy'] }}</b>
+                                          <br />
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="max-width:120px;" align="center">
+                                        <br />
+                                        <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank" style="text-decoration:none">
+                                          <img src="https://storage.googleapis.com/bobby-dependencies/email/botao_comprar_email.png" alt="magazineluiza.com" width="auto" height="auto" style="max-width:131px" />
+                                        </a>
+                                        <br />
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </a>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <div style="height:8px; background-color:#ffffff; max-width:590px; width:96%;"></div>
+                    {% set c = c + 2 %} {% endfor %}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+	  </td>
+	  </tr>
+</table>
+{% endif %}
