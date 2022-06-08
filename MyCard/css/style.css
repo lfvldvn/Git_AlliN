@@ -18,7 +18,7 @@ body {
 }
 
 main {
-  background: url(/workspaces/Git_AlliN/MyCard/images/background.svg);
+  background: url(https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/background.svg);
   width: 375px;
   height: 812px;
 }
