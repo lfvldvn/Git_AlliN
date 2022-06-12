@@ -3,101 +3,11 @@
 
 <head>
     <title>Mayk Brito - DoWhile 2021</title>
-    <link rel="stylesheet" href="https://github.com/lfvldvn/Git_AlliN/blob/main/MyCard/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        /* comentário css */
-        * {
-            margin: 0;
-        }
-
-        html,
-        body {
-            --black: hsl(240, 6%, 13%);
-            --grey: hsl(240, 9%, 89%);
-
-            height: 100%;
-            font-family: 'Roboto', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            display: grid;
-            place-items: center;
-        }
-
-        main {
-            background: url(https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/background.svg);
-            width: 375px;
-            height: 812px;
-        }
-
-        .container {
-            max-width: 250px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-
-            color: var(--grey);
-        }
-
-        .avatar {
-            width: 10rem;
-            margin: 11.5rem auto 0;
-
-            position: relative;
-        }
-
-        .avatar span {
-            position: absolute;
-            top: -15px;
-            z-index: 1;
-        }
-
-        .avatar>img {
-            width: 10rem;
-            height: 11.5rem;
-            object-fit: cover;
-            clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        }
-
-        h1 {
-            font-size: 1.5rem;
-
-            margin-top: 1.5rem;
-        }
-
-        a {
-            color: var(--grey);
-            text-decoration: none;
-
-            margin-top: 0.25rem;
-
-            display: flex;
-            gap: 0.75rem;
-
-            justify-content: center;
-            align-items: center;
-        }
-
-        p {
-            margin-top: 2rem;
-        }
-
-        ul {
-            margin-top: 4rem;
-
-            list-style: none;
-            padding: 0;
-
-            display: flex;
-            gap: 0.5rem;
-
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/css/style.css">
+   
 </head>
 
 <body>
@@ -114,33 +24,39 @@
             </div>
             <h1 id="userName">Alef Valdevino</h1>
             <a href="https://github.com/lfvldvn" target="_blank">
-                <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/github.svg"
-                    alt="ícone github" />
+                <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/github.png?raw=true"
+                    alt="ícone github" class="icon"/>
                 Alef Valdevino</a>
             <p>Marketing Analyst <br> Web Application Developer <br> Ethical Hacker </p>
             <ul id="socialLinks">
-                <li class="whatsapp">
-                    <a href="https://www.whatsapp.com/" target="_blank">
-                        <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/youtube.png"
-                            alt="ícone whatsapp" />
-                    </a>
-                </li>
                 <li class="facebook">
                     <a href="https://www.facebook.com/" target="_blank">
                         <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/facebook.png?raw=true"
-                            alt="ícone facebook" />
-                    </a>
-                </li>
-                <li class="instagram">
-                    <a href="https://instagram.com/" target="_blank">
-                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/instagram.png?raw=true"
-                            alt="ícone instagram" />
+                            alt="ícone facebook" class="icon"/>
                     </a>
                 </li>
                 <li class="twitter">
                     <a href="https://twitter.com/" target="_blank">
                         <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/twitter.png?raw=true"
-                            alt="ícone twitter" />
+                            alt="ícone twitter" class="icon"/>
+                    </a>
+                </li>
+                <li class="instagram">
+                    <a href="https://instagram.com/" target="_blank">
+                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/instagram.png?raw=true"
+                            alt="ícone instagram" class="icon"/>
+                    </a>
+                </li>
+                <li class="whatsapp">
+                    <a href="https://alvo.chat/hD" target="_blank">
+                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/whatsapp.png?raw=true"
+                            alt="ícone whatsapp" class="icon"/>
+                    </a>
+                </li>
+                <li class="linkedin">
+                    <a href="https://www.linkedin.com/in/alef/" target="_blank">
+                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/linkedin.png?raw=true"
+                            alt="ícone linkedin" class="icon"/>
                     </a>
                 </li>
             </ul>
@@ -150,10 +66,11 @@
     <script>
         const LinksSocialMedia = {
             github: 'lfvldvn',
-            youtube: 'channel/UCRIBq0NDXprv59aAfk38-kQ',
             facebook: 'alefvaldevinobarboza',
+            twitter: 'lfvldvn',
             instagram: 'lfvldvn',
-            twitter: 'lfvldvn'
+            linkedin: 'in/alef/'
+            
         }
 
         function changeSocialMediaLinks() {
