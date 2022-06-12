@@ -6,8 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/css/style.css">
-   
+    <link rel="stylesheet" href="/rocketseat_MyCard/css/style.css">
 </head>
 
 <body>
@@ -20,15 +19,21 @@
                         alt="Selo Rocketseat" />
                 </span>
                 <img src="https://pbs.twimg.com/profile_images/1448715023409352706/aank222g_400x400.jpg"
-                    alt="Foto pessoal" />
+                    alt="Foto pessoal" id="userPhoto"/>
             </div>
             <h1 id="userName">Alef Valdevino</h1>
-            <a href="https://github.com/lfvldvn" target="_blank">
+            <a id="userLink" href="https://github.com/lfvldvn" target="_blank">
                 <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/github.png?raw=true"
                     alt="ícone github" class="icon"/>
-                Alef Valdevino</a>
-            <p>Marketing Analyst <br> Web Application Developer <br> Ethical Hacker </p>
+                <span id="userLogin">lfvldvn</span></a>
+            <p id="userBio">Marketing Analyst <br> Web Application Developer <br> Ethical Hacker </p>
             <ul id="socialLinks">
+            <li class="linkedin">
+                    <a href="https://www.linkedin.com/in/alef/" target="_blank">
+                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/linkedin.png?raw=true"
+                            alt="ícone linkedin" class="icon"/>
+                    </a>
+                </li>
                 <li class="facebook">
                     <a href="https://www.facebook.com/" target="_blank">
                         <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/facebook.png?raw=true"
@@ -53,38 +58,12 @@
                             alt="ícone whatsapp" class="icon"/>
                     </a>
                 </li>
-                <li class="linkedin">
-                    <a href="https://www.linkedin.com/in/alef/" target="_blank">
-                        <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/rocketseat_MyCard/images/linkedin.png?raw=true"
-                            alt="ícone linkedin" class="icon"/>
-                    </a>
-                </li>
             </ul>
         </div>
     </main>
 
-    <script>
-        const LinksSocialMedia = {
-            github: 'lfvldvn',
-            facebook: 'alefvaldevinobarboza',
-            twitter: 'lfvldvn',
-            instagram: 'lfvldvn',
-            linkedin: 'in/alef/'
-            
-        }
-
-        function changeSocialMediaLinks() {
-            for (let li of socialLinks.children) {
-                const social = li.getAttribute('class')
-
-                li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
-
-                //alert(li.children[0].href)
-            }
-        }
-
-        changeSocialMediaLinks()
-    </script>
+    <script src="/rocketseat_MyCard/js/main.js">
+        
 </body>
 
 </html>
