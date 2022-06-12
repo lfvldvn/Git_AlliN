@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <style>
-    /* comentário css */
+        /* comentário css */
         * {
             margin: 0;
         }
@@ -60,7 +60,6 @@
             width: 10rem;
             height: 11.5rem;
             object-fit: cover;
-
             clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
         }
 
@@ -102,7 +101,7 @@
 </head>
 
 <body>
-<!-- comentário html -->
+    <!-- comentário html -->
     <main>
         <div class="container">
             <div class="avatar">
@@ -113,33 +112,33 @@
                 <img src="https://github.com/lfvldvn/Git_AlliN/blob/main/MyCard/images/lfvldvn.png?raw=true"
                     alt="Foto pessoal" />
             </div>
-            <h1>Alef Valdevino</h1>
-            <a href="https://instagram.com/lfvldvn" target="_blank">
+            <h1 id="userName">Alef Valdevino</h1>
+            <a href="https://github.com/lfvldvn" target="_blank">
                 <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/github.svg"
                     alt="ícone github" />
                 Alef Valdevino</a>
             <p>Marketing Analyst <br> Web Application Developer <br> Ethical Hacker </p>
-            <ul>
-                <li>
-                    <a href="https://youtube.com/lfvldvn" target="_blank">
+            <ul id="socialLinks">
+                <li class="youtube">
+                    <a href="https://www.youtube.com/channel/UCRIBq0NDXprv59aAfk38-kQ" target="_blank">
                         <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/youtube.svg"
                             alt="ícone youtube" />
                     </a>
                 </li>
-                <li>
-                    <a href="https://facebook.com/lfvldvn" target="_blank">
+                <li class="facebook">
+                    <a href="https://www.facebook.com/" target="_blank">
                         <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/facebook.svg"
                             alt="ícone facebook" />
                     </a>
                 </li>
-                <li>
-                    <a href="https://instagram.com/lfvldvn" target="_blank">
+                <li class="instagram">
+                    <a href="https://instagram.com/" target="_blank">
                         <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/instagram.svg"
                             alt="ícone instagram" />
                     </a>
                 </li>
-                <li>
-                    <a href="https://twitter.com/lfvldvn" target="_blank">
+                <li class="twitter">
+                    <a href="https://twitter.com/" target="_blank">
                         <img src="https://raw.githubusercontent.com/lfvldvn/Git_AlliN/e570ffd8b28f26147fe25f180f00eaec58b7432f/MyCard/images/twitter.svg"
                             alt="ícone twitter" />
                     </a>
@@ -147,19 +146,27 @@
             </ul>
         </div>
     </main>
+
     <script>
-    //comentário js
-    //const não muda e let muda
-    
+        const LinksSocialMedia = {
+            github: 'lfvldvn',
+            youtube: 'channel/UCRIBq0NDXprv59aAfk38-kQ',
+            facebook: 'alefvaldevinobarboza',
+            instagram: 'lfvldvn',
+            twitter: 'lfvldvn'
+        }
 
-    let user = {
-    name:"Alef",
-    phone: 941150397,
-    accept: true
-    }
+        function changeSocialMediaLinks() {
+            for (let li of socialLinks.children) {
+                const social = li.getAttribute('class')
 
-    alert('Hi, nice to meet you!')
-    alert(user.name)
+                li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+
+                alert(li.children[0].href)
+            }
+        }
+
+        changeSocialMediaLinks()
     </script>
 </body>
 

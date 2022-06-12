@@ -1,0 +1,589 @@
+<!-- HEADER NO TEMA DO BTG -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Novidades - Genera</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta itemprop="titulo" property="og:title" name="title" content="Genera" />
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+
+    <style type="text/css">
+        :root {
+            --page-background: #2d2d2d;
+        }
+
+        @media screen and (prefers-color-scheme: dark) {
+            body {
+                background: #2d2d2d;
+                color: #ffffff;
+            }
+
+            :root {
+                --page-background: #2d2d2d;
+            }
+
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 700px) (prefers-color-scheme: dark) {
+            body {
+                background-color: #2d2d2d !important;
+            }
+        }
+
+        @font-face {
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .link:hover {
+            text-decoration: none !important;
+        }
+
+        .cta-border:hover {
+            border-bottom: 1px solid transparent !important;
+        }
+
+        .fadeimg {
+            transition: 0.3s !important;
+            opacity: 1 !important;
+        }
+
+        .fadeimg:hover {
+            transition: 0.9s !important;
+            opacity: 0.5 !important;
+        }
+
+        .cta {
+            transition: 0.3s !important;
+            background: #eb1f40;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 5px 10px;
+            color: #000000;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+            width: 150px;
+            color: #ffffff;
+            line-height: 30px;
+            border-radius: 25px;
+        }
+
+        .cta a:visited {
+            color: #000000;
+        }
+
+        .btn-blue:hover {
+            transition: 0.3s !important;
+            background: #eb1f40 !important;
+            opacity: 0.7;
+            color: #ffffff !important;
+            box-shadow: none !important;
+        }
+
+        .table {
+            width: 700px !important;
+            max-width: 700px !important;
+            font-family: sans-serif;
+            font-size: 12px;
+            color: #2d2d2d;
+            text-decoration: none;
+        }
+
+        .description {
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            color: #555555;
+            font-weight: normal;
+            padding: 0px 0px;
+            vertical-align: top;
+            width: 100px;
+        }
+
+        .description_td {
+            height: 90px;
+        }
+
+        .price {
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: normal;
+            padding: 0px 10px;
+        }
+
+        .installment {
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            color: #707070;
+            font-weight: normal;
+            padding: 0px 10px;
+        }
+
+        .menu {
+            display: inline-block;
+            width: 700px !important;
+            max-width: 700px !important;
+            float: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .menutable {
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menutd {
+            display: block;
+            font-size: 14px;
+            color: #333333 !important;
+            text-align: center;
+            padding: 15px 10px;
+            background-color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menutd:hover {
+            background: #ffffff !important;
+            color: #E30613 !important;
+            box-shadow: none !important;
+            padding: 15px 10px;
+            font-weight: bold;
+            margin: 0px;
+            border: 0px;
+
+        }
+
+
+
+        .contenttd {
+            display: block;
+            font-family: sans-serif, helvetica neue, Helvetica, Arial;
+            font-size: 14px;
+            color: #333333 !important;
+            text-align: center;
+            background-color: #ffffff;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .contenttd:hover {
+            background: #ffffff !important;
+            color: #eb1f40 !important;
+            box-shadow: none !important;
+            font-weight: normal;
+            text-decoration: underline !important;
+            margin: 0px;
+            border: 0px;
+
+        }
+
+        .footer {
+            background: #ccc;
+            color: #404041;
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            text-decoration: none;
+
+
+        }
+
+        .footer:hover {
+            background: #ccc;
+            color: #881160;
+            font-family: helvetica neue, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            text-decoration: underline;
+            font-weight: normal;
+
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            border: 0;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+    </style>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <!-- ALL CONTAINER -->
+    <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+
+        <tr align="center">
+            <td height="15" align="center"></td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <!-- Pré Header -->
+
+                <table width="700" cellpadding="0" cellspacing="0" border="0" align="center"
+                    style="background-color:#ffffff;">
+                    <tr>
+                        <td width="2%" align="center"></td>
+                        <td align="left">
+                            <span class="snippet"
+                                style="font-family: sans-serif; color:#767676;font-size:9pt">Aproveite! Aproveite!
+                                Aproveite!</span>
+                            <div style="display: none; max-height: 0px; overflow: hidden;">
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                                ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            </div>
+                        </td>
+                        <td align="right">
+                            <a href="##preview##" style="font-family: sans-serif; color:#767676;font-size:9pt"
+                                target="_blank">Visualizar na web</a>
+                        </td>
+                        <td width="2%" align="center"></td>
+                    </tr>
+
+
+                    <tr align="center">
+                        <td height="15" align="center"></td>
+                    </tr>
+                </table>
+
+
+                <!-- Header -->
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" class="menutable"
+                    style="background-color: #ffffff;">
+                    <tr>
+                        <td align="left">
+                            <a href="https://www.genera.com.br/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Header/2022/202205/Logo_Genera.png"
+                                    alt="" title="" style="display: block;" width="160">
+                            </a>
+                        </td>
+
+                        <!-- start MENU_CATEGORIES -->
+                        <td align="center">
+                            <a href="https://www.genera.com.br/teste-de-ancestralidade/" target="_blank" title="Compre"
+                                class="menutd">
+                                CONHEÇA
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/blog/" target="_blank" title="Compre" class="menutd">
+                                BLOG
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://sobrenomes.genera.com.br/" target="_blank" title="Compre" class="menutd">
+                                SOBRE NOMES
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/ajuda/" target="_blank" title="Compre" class="menutd">
+                                AJUDA
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- end MENU_CATEGORIES -->
+
+                    <tr align="center">
+                        <td height="15" align="center"></td>
+                    </tr>
+                </table>
+                <!-- End Header -->
+
+                <!-- Conteúdo -->
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_01.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_02.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_03.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_04.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_05.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_06.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_07.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_08.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_09.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_10.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_11.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/generaDNAromance/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Newsletter/2022/202205/20220526B/Genera_12.png"
+                                    alt="" title="" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- FOOTER -->
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.genera.com.br/" target="_blank">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_01.png"
+                                    alt="Logo Genera" title="Logo Genera" style="display: block; ">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center"
+                    style=" background-color: #cccccc;">
+                    <tr>
+                        <td align="center" width="400">
+                            <span
+                                style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #404041; text-align: center; width: 400px; display: block;">
+                                <b>Tem alguma dúvida?
+                                    <br>
+                                    É só nos chamar:</b>
+                                <br><br>
+                                Telefone: <a href="tel:1140001653" target="_blank" style="color:#7e1f5e">11
+                                    4000-1653</a>
+                                <br>
+                                Email: <a href="mailto:contato@genera.com.br" target="_blank" class="footer"
+                                    style="color:#7e1f5e">contato@genera.com.br</a>
+                                <br>
+                                Av Paulista 1439, 10°andar, cj 103/104, <br>
+                                Bela Vista, São Paulo
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+                <!-- SOCIAL MEDIA -->
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style=""
+                    bgcolor="#404041;">
+                    <tr>
+                        <!-- FACEBOOK -->
+                        <td align="center">
+                            <a href="https://www.facebook.com/labgenera/" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_03.png"
+                                    alt="Facebook" title="Facebook" style="display: block;">
+                            </a>
+                        </td>
+                        <!-- INSTAGRAM -->
+                        <td align="center">
+                            <a href="https://www.instagram.com/genera.lab/" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_04.png"
+                                    alt="Instagram" title="Instagram" style="display: block;">
+                            </a>
+                        </td>
+                        <!-- TIKTOK -->
+                        <td align="center">
+                            <a href="https://www.tiktok.com/@genera.lab" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_05.png"
+                                    alt="Tiktok" title="Tiktok" style="display: block;">
+                            </a>
+                        </td>
+                        <!-- LINKEDIN -->
+                        <td align="center">
+                            <a href="https://www.linkedin.com/company/labgenera" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_06.png"
+                                    alt="Linkedin" title="Linkedin" style="display: block;">
+                            </a>
+                        </td>
+                        <!-- TWITTER -->
+                        <td align="center">
+                            <a href="https://twitter.com/LabGenera" target="_blank" class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_07.png"
+                                    alt="Twitter" title="Twitter" style="display: block;">
+                            </a>
+                        </td>
+                        <!-- WHATSAPP -->
+                        <td align="center">
+                            <a href="https://api.whatsapp.com/send/?phone=5511910425421" target="_blank"
+                                class="fadeimg">
+                                <img src="https://imagem-de-campanha.s3.amazonaws.com/Genera/Footer/2022/202205/Footer_Genera_08.png"
+                                    alt="Whatsapp" title="Whatsapp" style="display: block;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" height="10" style="background-color: #ccc;">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <!-- END SOCIAL MEDIA -->
+                <!-- TJ -->
+                <table width="700" border="0" cellspacing="0" cellpadding="0" align="center"
+                    style=" background-color: #cccccc;">
+                    <tr>
+                        <td align="center" width="400">
+                            <span
+                                style="font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; color: #404041; text-align: center; width: 400px; display: block;">
+                                Favor não responder este e-mail.
+                                <br>
+                                Conheça nossa <a href="https://www.genera.com.br/politica-de-privacidade/"
+                                    target="_blank" style="color:#7e1f5e">política de privacidade.</a>
+                                <br><br>
+                                Caso não queira mais receber nossos e-mails, <a href="##optout##" target="_blank"
+                                    style="color:#7e1f5e">remova aqui</a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+                <table width="700" height="30" style="background-color: #ccc;">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <!-- END TJ -->
+                <!-- END FOOTER -->
+            </td>
+        </tr>
+    </table>
+    <!-- END ALL CONTAINER -->
+</body>
+
+</html>
+<!-- END DO FOOTER DO BTG -->
