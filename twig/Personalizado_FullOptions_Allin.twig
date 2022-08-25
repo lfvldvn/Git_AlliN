@@ -24,30 +24,30 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="5"></td>
+                                            <td height="15"></td>
                                         </tr>
                                         {% if products[i]['priceByNum'] < products[0]['priceNum'] %}
                                         <tr>
                                             <td align="center">
-                                                ANTES € {{products[0]['price']}}
+                                                DE R$ {{products[0]['price']}}
                                             </td>
                                         </tr>
                                         {% endif %}
                                         <tr>
                                             <td align="center">
-                                                AGORA € {{products[0]['priceBy']}}
+                                                POR R$ {{products[0]['priceBy']}}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="5"></td>
+                                            <td height="15"></td>
                                         </tr>
                                         <tr>
                                             <td align="center">
                                                 <table cellpadding="0" cellspacing="0" align="center">
                                                     <tr>
-                                                        <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                                        <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                                             <a target="_blank" href="{{products[0]['productLink']}}" style="text-decoration: none; color: #ffffff;">
-                                                                SHOP NOW
+                                                                COMPRAR
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -55,7 +55,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="5"></td>
+                                            <td height="15"></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -102,25 +102,25 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="5"></td>
+                    <td height="15"></td>
                 </tr>
                 <tr>
                     <td width="188" align="center">
                         {% if products[c]['priceByNum'] < products[c]['priceNum'] %}
-                        DE&nbsp;{{products[c]['price']}}
-                        <br>AGORA € {{products[c]['priceBy']}}
+                        DE R$ {{products[c]['price']}}
+                        <br>POR R$ {{products[c]['priceBy']}}
                         {% endif %}<br>
                     </td>
                     <td width="188" align="center">
                         {% if products[(c + 1)]['priceByNum'] < products[(c + 1)]['priceNum'] %}
-                        DE&nbsp;{{products[(c + 1)]['price']}}
-                        <br>AGORA € {{products[(c + 1)]['priceBy']}}
+                        DE R$ {{products[(c + 1)]['price']}}
+                        <br>POR R$ {{products[(c + 1)]['priceBy']}}
                         {% endif %}<br>
                     </td>
                     <td width="188" align="center">
                         {% if products[(c + 2)]['priceByNum'] < products[(c + 2)]['priceNum'] %}
-                        DE&nbsp;{{products[(c + 2)]['price']}}
-                        <br>AGORA € {{products[(c + 2)]['priceBy']}}
+                        DE R$ {{products[(c + 2)]['price']}}
+                        <br>POR R$ {{products[(c + 2)]['priceBy']}}
                         {% endif %}<br>
                     </td>
                 </tr>
@@ -128,9 +128,9 @@
                     <td width="188" height="60" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{products[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -139,9 +139,9 @@
                     <td width="188" height="60" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -150,9 +150,9 @@
                     <td width="188" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{products[(c + 2)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -189,19 +189,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="5"></td>
+                    <td height="15"></td>
                 </tr>
                 <tr>
                     <td width="289" align="center">
                         {% if products[c]['priceByNum'] < products[c]['priceNum'] %}
-                        DE&nbsp;{{products[c]['price']}}
-                        <br>AGORA € {{products[c]['priceBy']}}
+                        DE R$ {{products[c]['price']}}
+                        <br>POR R$ {{products[c]['priceBy']}}
                         {% endif %}<br>
                     </td>
                     <td width="289" align="center">
                         {% if products[(c + 1)]['priceByNum'] < products[(c + 1)]['priceNum'] %}
-                        DE&nbsp;{{products[(c + 1)]['price']}}
-                        <br>AGORA € {{products[c + 1]['priceBy']}}
+                        DE R$ {{products[(c + 1)]['price']}}
+                        <br>POR R$ {{products[c + 1]['priceBy']}}
                         {% endif %}<br>
                     </td>
                 </tr>
@@ -209,9 +209,9 @@
                     <td width="289" height="60" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{products[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -220,9 +220,9 @@
                     <td width="289" height="60" align="center">                        
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -257,27 +257,27 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="5"></td>
+                                            <td height="15"></td>
                                         </tr>
                                         {% if products[i]['priceByNum'] < products[i]['priceNum'] %}
                                         <tr>
                                             <td align="left">
-                                                ANTES € {{products[i]['price']}}
+                                                DE R$ {{products[i]['price']}}
                                             </td>
                                         </tr>
                                         {% endif %}
                                         <tr>
                                             <td align="left">
-                                                AGORA € {{products[i]['priceBy']}}
+                                                POR R$ {{products[i]['priceBy']}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="left">
                                                 <table cellpadding="0" cellspacing="0" align="left">
                                                     <tr>
-                                                        <td align="left" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                                        <td align="left" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                                             <a target="_blank" href="{{products[i]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                                                SHOP NOW
+                                                                COMPRAR
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -309,7 +309,7 @@
                         <table cellspacing="0" cellpadding="0" border="0" width="600">
                             <tr>
                                 <td align="center" height="40" bgcolor="#000000" style="font-family: sans-serif; color: #ffffff;">
-                                    RECOMENDADOS PARA SI
+                                    RECOMENDADOS PARA VOCÊ
                                 </td>
                             </tr>
                         </table>
@@ -355,25 +355,25 @@
         </td>
     </tr>
     <tr>
-        <td height="5"></td>
+        <td height="15"></td>
     </tr>
     <tr>
         <td width="188" align="center">
             {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
-            ANTES € {{recommendations[c]['price']}}
-            <br>AGORA € {{products[c]['priceBy']}}
+            DE R$ {{recommendations[c]['price']}}
+            <br>POR R$ {{products[c]['priceBy']}}
             {% endif %}<br>
         </td>
         <td width="188" align="center">
             {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
-            ANTES € {{recommendations[(c + 1)]['price']}}
-            <br>AGORA € {{products[c + 1]['priceBy']}}
+            DE R$ {{recommendations[(c + 1)]['price']}}
+            <br>POR R$ {{products[c + 1]['priceBy']}}
             {% endif %}<br>
         </td>
         <td width="188" align="center">
             {% if recommendations[(c + 2)]['priceByNum'] < recommendations[(c + 2)]['priceNum'] %}
-            ANTES € {{recommendations[(c + 2)]['price']}}
-            <br>AGORA € {{products[c + 2]['priceBy']}}
+            DE R$ {{recommendations[(c + 2)]['price']}}
+            <br>POR R$ {{products[c + 2]['priceBy']}}
             {% endif %}<br>
         </td>
     </tr>
@@ -381,9 +381,9 @@
         <td width="188" height="60" align="center">
             <table cellpadding="0" cellspacing="0" align="center">
                 <tr>
-                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                         <a target="_blank" href="{{recommendations[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                            SHOP NOW
+                            COMPRAR
                         </a>
                     </td>
                 </tr>
@@ -392,9 +392,9 @@
         <td width="188" height="60" align="center">
             <table cellpadding="0" cellspacing="0" align="center">
                 <tr>
-                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                         <a target="_blank" href="{{recommendations[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                            SHOP NOW
+                            COMPRAR
                         </a>
                     </td>
                 </tr>
@@ -403,9 +403,9 @@
         <td width="188" align="center">
             <table cellpadding="0" cellspacing="0" align="center">
                 <tr>
-                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                    <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                         <a target="_blank" href="{{recommendations[(c + 2)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                            SHOP NOW
+                            COMPRAR
                         </a>
                     </td>
                 </tr>
@@ -439,19 +439,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td height="5"></td>
+                    <td height="15"></td>
                 </tr>
                 <tr>
                     <td width="289" align="center">
                         {% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
-                        ANTES € {{recommendations[c]['price']}}
-                        <br>AGORA € {{products[c]['priceBy']}}
+                        DE R$ {{recommendations[c]['price']}}
+                        <br>POR R$ {{products[c]['priceBy']}}
                         {% endif %}<br>
                     </td>
                     <td width="289" align="center">
                         {% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
-                        ANTES € {{recommendations[(c + 1)]['price']}}
-                        <br>AGORA € {{products[c + 1]['priceBy']}}
+                        DE R$ {{recommendations[(c + 1)]['price']}}
+                        <br>POR R$ {{products[c + 1]['priceBy']}}
                         {% endif %}<br>
                     </td>
                 </tr>
@@ -459,9 +459,9 @@
                     <td width="289" height="60" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{recommendations[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -470,9 +470,9 @@
                     <td width="289" height="60" align="center">
                         <table cellpadding="0" cellspacing="0" align="center">
                             <tr>
-                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                     <a target="_blank" href="{{recommendations[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                        SHOP NOW
+                                        COMPRAR
                                     </a>
                                 </td>
                             </tr>
@@ -507,27 +507,27 @@
                                             </td>
                                         </tr>
                                          <tr>
-                                            <td height="5"></td>
+                                            <td height="15"></td>
                                         </tr>
                                         {% if recommendations[i]['priceByNum'] < recommendations[i]['priceNum'] %}
                                         <tr>
                                             <td align="center">
-                                                ANTES € {{recommendations[i]['price']}}
+                                                DE R$ {{recommendations[i]['price']}}
                                             </td>
                                         </tr>
                                         {% endif %}
                                         <tr>
                                             <td align="center">
-                                                AGORA € {{recommendations[i]['priceBy']}}
+                                                POR R$ {{recommendations[i]['priceBy']}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="center">
                                                 <table cellpadding="0" cellspacing="0" align="center">
                                                     <tr>
-                                                        <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #000000;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
+                                                        <td align="center" style="padding: 10px; width: 150px; height: 20px; border: 0px;padding: 5px; background-color: #008844;border-radius: 5px; font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter; letter-spacing: 0.1em">
                                                             <a target="_blank" href="{{recommendations[i]['productLink']}}" style="text-decoration: none;color: #ffffff;">
-                                                                SHOP NOW
+                                                                COMPRAR
                                                             </a>
                                                         </td>
                                                     </tr>

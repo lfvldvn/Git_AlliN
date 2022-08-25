@@ -1,0 +1,226 @@
+    {% set totalProducts=products|length %}
+    {% set totalRecommendations=recommendations|length %}
+    {% if totalProducts > 0 %}
+        <!-- 1/LINHA -->
+
+        <table width="640" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style=" font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;">
+            <tr>
+                <td align="center">
+                    <a href="" target="_blank">
+                        <img src="" style="display: block;">
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <table width="640" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">
+            {% for i in 0..(totalProducts-1) %}
+                <tr>
+                    <td align="center">
+                        <table width="640" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff">
+                            <tr>
+                                <td
+                                    width="230" height="200V" align="center">
+                                    <!-- IMG -->
+                                    <table width="200" cellpadding="15" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td width="200V" align="center">
+                                                <a href="{{ products[i]['productLink'] }}">
+                                                    <img src="{{ products[i]['image'] }}" width="100%" border="0" style="display: block;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- END IMG -->
+                                </td>
+                                <td
+                                    width="350" align="center">
+                                    <!-- NOME PRODUTO -->
+                                    <table width="350" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td align="left" width="350" style="padding: 0px">
+                                                <p style="font-family: Arial Nova, sans-serif; font-size: 16px; color: #325359; font-weight: bold;">
+                                                    {{ products[i]['productName'] }}</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <!-- END NOME PRODUTO -->
+                                    <table width="350" border="0" cellpadding="0" cellspacing="0" align="center">
+                                        <tr>
+                                            <td
+                                                align="left" width="350">
+                                                <!-- CTA -->
+                                                <a href="{{ products[i]['productLink'] }}">
+                                                    <img src="https://imagem-de-campanha.s3.amazonaws.com/ShopClub_Argentina/Fix/cta.png" style="display:block;">
+                                                </a>
+                                                <!--END  CTA -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>{% endif %}{% if totalRecommendations >= 3 %}
+    <!-- RECOMENDATIONS -->
+    <center>
+        <table width="640" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FF3066" style="">
+            <tr>
+                <td align="center" valign="middle" height="60px">
+                    <p style="font-family: sans-serif; font-weight: bold; color: #fff; font-size: 28px;">
+                        Todas las categorías al mejor precio
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <!-- 3/linha -->
+    {% set c=0 %}
+    {% set totalLines = (totalRecommendations / 3) | round(0, 'floor') %}
+    {% for l in range(1, totalLines) %}
+        <center>
+            <table width="640" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3066" style="padding: 25px 0px;">
+                <tr>
+                    <!-- Product 1 -->
+                    <td valign="top" align="center">
+                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff" style="border-radius: 25px; padding: 20px 0px; margin: 0px 10px 0px 5px;">
+                            <tr>
+                                <td
+                                    align="center">
+                                    <!-- IMG_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td width="170" height="170" valign="top" align="center">
+                                                <a href="{{ recommendations[c]['productLink'] }}" target="_blank">
+                                                    <img src="{{ recommendations[c]['image'] }}" width="100%" border="0" style="display: block; border-radius:25px;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- NOME_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td align="left" valign="top" height="100" style="padding: 10px 0px 0px 10px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #325359 ">
+                                                <span>{{ recommendations[c]['productName'] }}</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <!-- CTA -->
+
+                                    <a href="{{ recommendations[c]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: normal; letter-spacing: 0.1em">
+                                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 0px 10px 15px 10px; margin:5px;">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://imagem-de-campanha.s3.amazonaws.com/ShopClub_Argentina/Fix/cta.png" style="display:block;"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                    <!--END  CTA -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Product 2 -->
+                    <td valign="top" align="center">
+                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff" style="border-radius: 25px; padding: 20px 0px; margin: 0px 10px 0px 5px;">
+                            <tr>
+                                <td
+                                    align="center">
+                                    <!-- IMG_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td width="170" height="170" valign="top" align="center">
+                                                <a href="{{ recommendations[(c + 1)]['productLink'] }}" target="_blank">
+                                                    <img src="{{ recommendations[(c + 1)]['image'] }}" width="100%" border="0" style="display: block;border-radius:25px;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- NOME_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td align="left" valign="top" height="100" style="padding: 10px 0px 0px 10px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #325359 ">
+                                                <span>{{ recommendations[(c + 1)]['productName'] }}</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <!-- CTA -->
+
+                                    <a href="{{ recommendations[(c + 1)]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: normal; letter-spacing: 0.1em">
+                                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 0px 10px 15px 10px; margin:5px;">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://imagem-de-campanha.s3.amazonaws.com/ShopClub_Argentina/Fix/cta.png" style="display:block;"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                    <!--END  CTA -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Product 3 -->
+                    <td valign="top" align="center">
+                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#fff" style="border-radius: 25px; padding: 20px 0px; margin: 0px 10px 0px 5px;">
+                            <tr>
+                                <td
+                                    align="center">
+                                    <!-- IMG_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td width="170" height="170" valign="top" align="center">
+                                                <a href="{{ recommendations[(c + 2)]['productLink'] }}" target="_blank">
+                                                    <img src="{{ recommendations[(c + 2)]['image'] }}" width="100%" border="0" style="display: block;border-radius:25px;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- NOME_PRODUCT -->
+                                    <table width="170" cellpadding="0" cellspacing="0" border="0" align="center">
+                                        <tr>
+                                            <td align="left" valign="top" height="100" style="padding: 10px 0px 0px 10px; font-family: Arial Nova, sans-serif; font-size: 13px; color: #325359 ">
+                                                <span>{{ recommendations[(c + 2)]['productName'] }}</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <!-- CTA -->
+
+                                    <a href="{{ recommendations[(c + 2)]['productLink'] }}" style="font-family: Arial Nova, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: normal; letter-spacing: 0.1em">
+                                        <table width="170" cellpadding="0" cellspacing="0" border="0" align="center" style="padding: 0px 10px 15px 10px; margin:5px;">
+                                            <tr>
+                                                <td align="center">
+                                                    <img src="https://imagem-de-campanha.s3.amazonaws.com/ShopClub_Argentina/Fix/cta.png" style="display:block;"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </a>
+                                    <!--END  CTA -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table width="640" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#ffffff">
+                <tr></tr>
+                <tr>
+                    <td height="50px" bgcolor="#FF3066"></td>
+                </tr>
+            </table>
+
+
+            {% set c = c + 3 %}
+        {% endfor %}
+        <!-- END RECOMMENDATIONS -->
+    {% endif %}
